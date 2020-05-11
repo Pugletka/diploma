@@ -9,7 +9,10 @@
     </head>
     <body>
         <div class="page-header">
-            <h1><a href="/">Django Girls Blog</a></h1>
+            {% if user.is_authenticated %}
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
+            <h1><a href="/">Pugl Blog</a></h1>
         </div>
 
         <div class="content container">
@@ -23,4 +26,5 @@
     </body>
 </html>
 
+<!-- Класс glyphicon glyphicon-plus определён в используемой нами теме bootstrap — таким образом мы выведем значок плюса.-->
 <!--block — тег шаблона, позволяющий вставлять HTML-код этого блока в другие шаблоны, расширяющие base.html-->
